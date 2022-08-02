@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import { bookSearch } from "./KakaoApi";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = (props) => {
+  useEffect(() => {
+    kakaoSearch();
+  }, []);
+
+  const kakaoSearch = async () => {
+    const params = {
+      query: "아몬드",
+      sort: "accuracy", // accuracy | recency 정확도 or 최신
+      page: 1, // 페이지번호
+      size: 10, // 한 페이지에 보여 질 문서의 개수
+    };
+    const { data } = await bookSearch(params);
+    console.log(data);
+  };
+  return <div></div>;
+};
 
 export default App;
