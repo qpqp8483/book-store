@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import BookSearch from "./components/BookSearch";
+import BookSearch from "./components/bookSearch/BookSearch";
 import { bookSearch } from "./KakaoApi";
 
 const App = () => {

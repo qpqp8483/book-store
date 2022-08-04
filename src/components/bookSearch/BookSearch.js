@@ -1,6 +1,6 @@
 import React from "react";
-import BookItem from "./BookItem";
-
+import BookItem from "../bookItem/BookItem";
+import "./bookSearch.scss";
 const BookSearch = ({ books, text, searchBook, setText }) => {
   return (
     <div>
@@ -12,9 +12,11 @@ const BookSearch = ({ books, text, searchBook, setText }) => {
         />
         <button onClick={() => searchBook(text)}>검색</button>
       </form>
-      {books.map((book, index) => (
-        <BookItem book={book} key={index} />
-      ))}
+      <div className="book_list">
+        {books.map((book, index) => (
+          <BookItem book={book} key={index} />
+        ))}
+      </div>
     </div>
   );
 };
