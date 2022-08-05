@@ -4,6 +4,7 @@ import { bookSearch } from "./KakaoApi";
 
 const App = () => {
   const [books, setBooks] = useState([]); // 책 리스트 state 기본값 설정
+  const [listUpdate, setListUpdate] = useState(true); // 책 리스트 업데이트될때 상태변환 설정
   const [queryText, setQueryText] = useState("");
   const [text, setText] = useState("");
 
@@ -30,6 +31,7 @@ const App = () => {
   };
   const searchBook = (text) => {
     setQueryText(text);
+    setListUpdate(false);
   };
 
   return (
@@ -39,6 +41,7 @@ const App = () => {
         text={text}
         searchBook={searchBook}
         setText={setText}
+        listUpdate={listUpdate}
       />
     </div>
   );
