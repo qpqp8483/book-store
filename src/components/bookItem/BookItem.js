@@ -1,5 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import default_img from "../../assets/img/noimg.jpeg";
+import CommonButton from "../button/CommonButton";
 import "./bookItem.scss";
 
 const BookItem = ({ book }) => {
@@ -17,7 +19,9 @@ const BookItem = ({ book }) => {
         />
       </span>
       <div>
-        <h4>{book.title}</h4>
+        <Link to="/" className="title">
+          {book.title}
+        </Link>
         <ul>
           <li>{book.authors}</li>
           <li>
@@ -31,6 +35,9 @@ const BookItem = ({ book }) => {
               : `${content_length}...`}
           </li>
         </ul>
+        <div>
+          <CommonButton type={"positive"} text={"구매하기"} />
+        </div>
       </div>
     </div>
   );

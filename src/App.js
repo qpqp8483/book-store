@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import BookSearch from "./components/bookSearch/BookSearch";
 import { bookSearch } from "./KakaoApi";
 
@@ -35,15 +36,24 @@ const App = () => {
   };
 
   return (
-    <div>
-      <BookSearch
-        books={books}
-        text={text}
-        searchBook={searchBook}
-        setText={setText}
-        listUpdate={listUpdate}
-      />
-    </div>
+    <BrowserRouter>
+      <div>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <BookSearch
+                books={books}
+                text={text}
+                searchBook={searchBook}
+                setText={setText}
+                listUpdate={listUpdate}
+              />
+            }
+          />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 };
 

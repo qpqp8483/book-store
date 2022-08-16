@@ -20,8 +20,11 @@
   div {
     width: calc(100% - 130px);
 
-    h4 {
+    .title {
       margin: 0 0 15px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #333;
     }
 
     ul {
