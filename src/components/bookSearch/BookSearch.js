@@ -1,4 +1,5 @@
 import BookItem from "../bookItem/BookItem";
+import Header from "../header/Header";
 import "./bookSearch.scss";
 const BookSearch = ({ books, text, searchBook, setText, listUpdate }) => {
   const handleSubmit = (e) => {
@@ -7,6 +8,7 @@ const BookSearch = ({ books, text, searchBook, setText, listUpdate }) => {
   };
   return (
     <div>
+      <Header />
       <form action="#" onSubmit={handleSubmit} className="search_box">
         <div>
           <input
@@ -18,9 +20,6 @@ const BookSearch = ({ books, text, searchBook, setText, listUpdate }) => {
           <button onClick={() => searchBook(text)}>검색</button>
         </div>
       </form>
-      <div className="basket">
-        <span className="toggle_btn">열기</span>
-      </div>
       <div className="book_list">
         {listUpdate ? (
           <span>찾으시는 도서를 검색해주세요.</span>
