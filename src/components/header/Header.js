@@ -1,4 +1,6 @@
 import React from "react";
+import CommonButton from "../button/CommonButton";
+import "./header.scss";
 
 const Header = () => {
   return (
@@ -44,8 +46,10 @@ const Header = () => {
                 <p className="price">12,000원</p>
               </td>
               <td>
-                <button>주문하기</button>
-                <button>삭제</button>
+                <div className="basket_btn_box">
+                  <CommonButton type={"positive"} text={"구매하기"} />
+                  <CommonButton type={"negative"} text={"삭제"} />
+                </div>
               </td>
             </tr>
           </tbody>
