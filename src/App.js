@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import BookSearch from "./components/bookSearch/BookSearch";
 import { bookSearch } from "./KakaoApi";
+import "./App.css";
 
 const App = () => {
   const [books, setBooks] = useState([]); // 책 리스트 state 기본값 설정
@@ -37,22 +38,20 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      <div>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <BookSearch
-                books={books}
-                text={text}
-                searchBook={searchBook}
-                setText={setText}
-                listUpdate={listUpdate}
-              />
-            }
-          />
-        </Routes>
-      </div>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <BookSearch
+              books={books}
+              text={text}
+              searchBook={searchBook}
+              setText={setText}
+              listUpdate={listUpdate}
+            />
+          }
+        />
+      </Routes>
     </BrowserRouter>
   );
 };
