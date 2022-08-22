@@ -4,14 +4,18 @@ const CoinPopup = ({ coin, coinChange }) => {
   const coinHandle = (e) => {
     coinChange(e.target.value);
   };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(coin);
+  };
   return (
     <div className="coin_popup">
       <div>
         <p>
           충전하실 금액을 입력하여주세요 <br />
-          <span>※10만원이상 초과할 수 없습니다.</span>
+          <span>※100만원이상 초과할 수 없습니다.</span>
         </p>
-        <form action="">
+        <form action="#" onSubmit={handleSubmit}>
           <input type="number" value={coin} onChange={coinHandle} />
           <button>확인</button>
         </form>

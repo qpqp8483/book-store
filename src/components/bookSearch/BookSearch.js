@@ -5,9 +5,10 @@ import Header from "../header/Header";
 import "./bookSearch.scss";
 const BookSearch = ({ books, text, searchBook, setText, listUpdate }) => {
   const [coin, setCoin] = useState("");
+  const [coinSubmit, setCoinSubmit] = useState(false);
   const coinChange = (e) => {
-    if (e > 100000) {
-      alert("10만원을 초과할 수 없습니다.");
+    if (e > 1000000) {
+      alert("100만원을 초과할 수 없습니다.");
       return;
     } else {
       setCoin(e);

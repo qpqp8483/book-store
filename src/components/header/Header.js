@@ -5,7 +5,7 @@ import "./header.scss";
 const Header = () => {
   return (
     <div className="header">
-      <div className="wallet">보유금액 : 10000원</div>
+      <div className="wallet">보유금액 : {}원</div>
       <div className="basket">
         <table>
           <caption>구매 리스트 정보</caption>
