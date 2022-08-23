@@ -1,4 +1,9 @@
 .coin_popup {
+  &.coin_pop_none {
+    visibility: hidden;
+    opacity: 0;
+    transition: all ease 0.2s;
+  }
   div {
     position: fixed;
     top: 50%;

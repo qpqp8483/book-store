@@ -12,7 +12,12 @@ const BookSearch = ({ books, text, searchBook, setText, listUpdate }) => {
       return;
     } else {
       setCoin(e);
+      console.log(coin);
     }
+  };
+  const coinValue = (e) => {
+    setCoinSubmit(e);
+    console.log(e);
   };
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,7 +25,12 @@ const BookSearch = ({ books, text, searchBook, setText, listUpdate }) => {
   };
   return (
     <div className="search_section">
-      <CoinPopup coin={coin} coinChange={coinChange} />
+      <CoinPopup
+        coin={coin}
+        coinChange={coinChange}
+        coinValue={coinValue}
+        coinSubmit={coinSubmit}
+      />
       <div>
         <form action="#" onSubmit={handleSubmit} className="search_box">
           <div>
@@ -43,7 +53,7 @@ const BookSearch = ({ books, text, searchBook, setText, listUpdate }) => {
           )}
         </div>
       </div>
-      <Header />
+      <Header coin={coin} coinSubmit={coinSubmit} />
     </div>
   );
 };

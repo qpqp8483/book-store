@@ -2,10 +2,10 @@ import React from "react";
 import CommonButton from "../button/CommonButton";
 import "./header.scss";
 
-const Header = () => {
+const Header = ({ coinSubmit, coin }) => {
   return (
     <div className="header">
-      <div className="wallet">보유금액 : {}원</div>
+      <div className="wallet">보유금액 : {coinSubmit ? coin : `0`}원</div>
       <div className="basket">
         <table>
           <caption>구매 리스트 정보</caption>
